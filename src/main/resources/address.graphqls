@@ -17,7 +17,7 @@ type Query {
 
 # Root
 type Mutation {
-	createAdress(clientId: String!, addressLine1: String!, addresLine2: String, zip: String!,
+	createAddress(clientId: String!, addressLine1: String!, addresLine2: String, zip: String!,
 		city: String!, country: String): Address!
 	deleteAddress(id: ID!): Boolean
 }
