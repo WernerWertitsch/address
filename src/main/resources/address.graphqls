@@ -15,6 +15,7 @@ type Query {
 	countAddresses: Int!
 }
 
+
 # Root
 type Mutation {
 	createAddress(clientId: String!, addressLine1: String!, addresLine2: String, zip: String!,
