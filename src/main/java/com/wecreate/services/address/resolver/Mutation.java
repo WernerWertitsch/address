@@ -5,6 +5,8 @@ import com.wecreate.services.address.model.Address;
 import com.wecreate.services.address.repository.AddressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.Optional;
 import java.util.logging.Logger;
 
 @Component
@@ -34,6 +36,14 @@ public class Mutation implements GraphQLMutationResolver {
         this.addressRepository.save(ret);
         return (ret);
 
+    }
+
+    public Address deleteAddress(String id) {
+        Optional<Address> ret = this.addressRepository.findById(id);
+        if(ret.isPresent()) {
+            this.addressRepository.deleteById(id);
+        }
+        return ret.get();
     }
 
     public void updateAddress(Address address) {
