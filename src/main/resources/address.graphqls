@@ -12,7 +12,7 @@ type Address {
 # Root
 type Query {
 	findAllAddresses: [Address]!
-	getAddressesFor(clientId: String!): [Address]
+	getAddressesFor(clientid: String!): [Address]
 	countAddresses: Int!
 }
 

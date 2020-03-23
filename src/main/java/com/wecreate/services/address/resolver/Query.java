@@ -16,7 +16,8 @@ public class Query implements GraphQLQueryResolver {
     public Iterable<Address> findAllAddresses() {return this.addressRepository.findAll();
     }
 
-    public Iterable<Address> getAddressesFor(){return this.addressRepository.findAll();
+    public Iterable<Address> getAddressesFor(String clientid) {
+        return this.addressRepository.findAddressesByClientid(clientid);
     }
 
     public Long countAddresses(){return this.addressRepository.count();}
