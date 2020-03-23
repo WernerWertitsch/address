@@ -12,12 +12,14 @@ type Address {
 # Root
 type Query {
 	findAllAddresses: [Address]!
-	getAddressesFor(clientid: String!): [Address]
+	getAddressesFor(clientid: String!): [Address]!
 	countAddresses: Int!
+	findAddressesByZip(zip: String!): [Address]!
 }
 
 # Root
 type Mutation {
 	createAddress(clientid: String!, type: String!, addressline1: String!, addressline2: String, zip: String!,
 		city: String!, country: String): Address!
+	
 }
