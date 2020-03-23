@@ -20,6 +20,10 @@ public class Query implements GraphQLQueryResolver {
         return this.addressRepository.findAddressesByClientid(clientid);
     }
 
+    public Iterable<Address> findAddressesByZip(String zip) {
+        return this.addressRepository.findAddressesByZip(zip);
+    }
+
     public Long countAddresses(){return this.addressRepository.count();}
 
     public Iterable<Address> findFuzzyAddress(String clientid) {
